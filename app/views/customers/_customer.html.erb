@@ -1,0 +1,12 @@
+<div class="customer-card">
+  <% if customer.image.attached? %>
+    <%= image_tag customer.image, size: "150x150", alt: "#{customer.full_name}'s image" %>
+  <% else %>
+    <%= image_tag "default.jpg", size: "150x150", alt: "Default avatar" %>
+  <% end %>
+
+  <h2><%= customer.full_name %></h2>
+  <p><strong>Phone:</strong> <%= customer.phone_number.presence || "N/A" %></p>
+  <p><strong>Email:</strong> <%= customer.email_address.presence || "N/A" %></p>
+  <p><strong>Notes:</strong> <%= customer.notes.presence || "No notes provided." %></p>
+</div>
